@@ -14,10 +14,12 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class Question3 extends Activity {
     ImageButton imageButton;
-
+    RadioButton r1,r2;
+    RadioGroup radioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,21 @@ public class Question3 extends Activity {
                 startActivity(intent);
             }
         });
+    }
+    public void btClick(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.quiz3option1:
+                if (checked)
+                break;
+            case R.id.quiz3option2:
+                if (checked)
+
+                break;
+        }
     }
 }
 

@@ -13,10 +13,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="50dp"
-        android:paddingTop="30dp">
+        android:paddingTop="30dp"
+        android:id="@+id/linearLayout">
 
         <EditText
-            android:id="@+id/user_name"
+            android:id="@+id/name"
             android:layout_width="fill_parent"
 
             android:layout_height="wrap_content"
@@ -30,7 +31,7 @@
 
 
         <EditText
-            android:id="@+id/user_phone"
+            android:id="@+id/phone"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_phone_24dp"
@@ -43,7 +44,7 @@
 
 
         <EditText
-            android:id="@+id/user_address"
+            android:id="@+id/city"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_home_24dp"
@@ -53,6 +54,13 @@
             android:textStyle="bold"/>
 
     </LinearLayout>
+
+    <ImageButton
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/submitbutton" />
 
 
 

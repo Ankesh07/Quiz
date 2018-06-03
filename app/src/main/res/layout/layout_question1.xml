@@ -15,7 +15,7 @@
         android:layout_marginTop="18dp"
         android:text="1. आपने हीरो स्कूटर की टेस्ट राइड ली?"
         android:textColor="#BC1C1C"
-        android:textSize="25dp"
+        android:textSize="22dp"
         android:textStyle="bold" />
 
         <RadioGroup

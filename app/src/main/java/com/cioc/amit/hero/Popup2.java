@@ -15,13 +15,14 @@ import android.widget.RadioButton;
 
 public class Popup2 extends Activity {
     EditText e1,e2,e3;
-    RadioButton r1,r2,r3;
     ImageButton imageButton;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popup2);
-
+        e1 = findViewById(R.id.name);
+        e2 = findViewById(R.id.phone);
+        e3 = findViewById(R.id.city);
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
