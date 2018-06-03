@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".splash"
+        <activity
+            android:name=".splash"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,7 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,16 +27,25 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Quiz"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Puzzle"
+        <activity
+            android:name=".Quiz"
             android:screenOrientation="portrait" />
-        <activity android:name=".Question1"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Question2"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Question3"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Puzzle"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Question1"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Question2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Question3"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Popup" />
+        <activity android:name=".Popup2" />
+        <activity android:name=".Question4"></activity>
+
     </application>
 
 </manifest>
