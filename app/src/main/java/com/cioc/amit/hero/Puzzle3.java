@@ -3,12 +3,8 @@ package com.cioc.amit.hero;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
-import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -18,11 +14,11 @@ import java.util.Random;
  * Created by amit on 28/5/18.
  */
 
-public class Puzzle extends Activity {
+public class Puzzle3 extends Activity {
 
 
 
-        private static GestureDetectGridView mGridView;
+        private static GestureDetectGridView3 mGridView;
 
         private static final int COLUMNS = 3;
         private static final int DIMENSIONS = COLUMNS * COLUMNS;
@@ -39,7 +35,7 @@ public class Puzzle extends Activity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_puzzle);
+            setContentView(R.layout.activity_puzzle3);
 
             init();
 
@@ -49,7 +45,7 @@ public class Puzzle extends Activity {
         }
 
         private void init() {
-            mGridView = (GestureDetectGridView) findViewById(R.id.grid);
+            mGridView = (GestureDetectGridView3) findViewById(R.id.grid3);
             mGridView.setNumColumns(COLUMNS);
 
             tileList = new String[DIMENSIONS];
@@ -111,28 +107,28 @@ public class Puzzle extends Activity {
                 button = new Button(context);
 
                 if (tileList[i].equals("0"))
-                    button.setBackgroundResource(R.drawable.appvechicle1);
+                    button.setBackgroundResource(R.drawable.hero31);
                 else if (tileList[i].equals("1"))
-                    button.setBackgroundResource(R.drawable.appvechicle2);
+                    button.setBackgroundResource(R.drawable.hero32);
                 else if (tileList[i].equals("2"))
-                    button.setBackgroundResource(R.drawable.appvechicle3);
+                    button.setBackgroundResource(R.drawable.hero33);
                 else if (tileList[i].equals("3"))
-                    button.setBackgroundResource(R.drawable.appvechicle4);
+                    button.setBackgroundResource(R.drawable.hero34);
                 else if (tileList[i].equals("4"))
-                    button.setBackgroundResource(R.drawable.appvechicle5);
+                    button.setBackgroundResource(R.drawable.hero35);
                 else if (tileList[i].equals("5"))
-                    button.setBackgroundResource(R.drawable.appvechicle6);
+                    button.setBackgroundResource(R.drawable.hero36);
                 else if (tileList[i].equals("6"))
-                    button.setBackgroundResource(R.drawable.appvechicle7);
+                    button.setBackgroundResource(R.drawable.hero37);
                 else if (tileList[i].equals("7"))
-                    button.setBackgroundResource(R.drawable.appvechicle8);
+                    button.setBackgroundResource(R.drawable.hero38);
                 else if (tileList[i].equals("8"))
-                    button.setBackgroundResource(R.drawable.appvechicle9);
+                    button.setBackgroundResource(R.drawable.hero39);
 
                 buttons.add(button);
             }
 
-            mGridView.setAdapter(new CustomAdapter(buttons, mColumnWidth, mColumnHeight));
+            mGridView.setAdapter(new CustomAdapter3(buttons, mColumnWidth, mColumnHeight));
         }
 
         private static void swap(Context context, int currentPosition, int swap) {

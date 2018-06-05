@@ -60,7 +60,9 @@
         android:layout_height="70dp"
         android:layout_below="@+id/linearLayout"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/submitbutton" />
+        android:src="@drawable/submitbutton"
+        android:clickable="true"
+        android:id="@+id/submit"/>
 
 
 

@@ -41,12 +41,10 @@ public class Question3 extends Activity {
         // Check which radio button was clicked
         switch(view.getId()) {
             case R.id.quiz3option1:
-                if (checked)
+                r1.setChecked(true);
                 break;
             case R.id.quiz3option2:
-                if (checked)
-
-                break;
+                r2.setChecked(false);
         }
     }
 }

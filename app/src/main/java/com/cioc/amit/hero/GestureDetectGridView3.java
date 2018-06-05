@@ -8,7 +8,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.GridView;
 
-public class GestureDetectGridView extends GridView {
+public class GestureDetectGridView3 extends GridView {
     private GestureDetector gDetector;
     private boolean mFlingConfirmed = false;
     private float mTouchX;
@@ -18,24 +18,24 @@ public class GestureDetectGridView extends GridView {
     private static final int SWIPE_MAX_OFF_PATH = 100;
     private static final int SWIPE_THRESHOLD_VELOCITY = 100;
 
-    public GestureDetectGridView(Context context) {
+    public GestureDetectGridView3(Context context) {
         super(context);
         init(context);
     }
 
-    public GestureDetectGridView(Context context, AttributeSet attrs) {
+    public GestureDetectGridView3(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
 
-    public GestureDetectGridView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public GestureDetectGridView3(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }
 
     @TargetApi(Build.VERSION_CODES.CUR_DEVELOPMENT) // API 21
-    public GestureDetectGridView(Context context, AttributeSet attrs, int defStyleAttr,
-                                 int defStyleRes) {
+    public GestureDetectGridView3(Context context, AttributeSet attrs, int defStyleAttr,
+                                  int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context);
     }
@@ -50,7 +50,7 @@ public class GestureDetectGridView extends GridView {
             @Override
             public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
                                    float velocityY) {
-                final int position = GestureDetectGridView.this.pointToPosition
+                final int position = GestureDetectGridView3.this.pointToPosition
                         (Math.round(e1.getX()), Math.round(e1.getY()));
 
                 if (Math.abs(e1.getY() - e2.getY()) > SWIPE_MAX_OFF_PATH) {
@@ -59,18 +59,18 @@ public class GestureDetectGridView extends GridView {
                         return false;
                     }
                     if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE) {
-                        Puzzle.moveTiles(context, Puzzle.up, position);
+                        Puzzle3.moveTiles(context, Puzzle3.up, position);
                     } else if (e2.getY() - e1.getY() > SWIPE_MIN_DISTANCE) {
-                        Puzzle.moveTiles(context, Puzzle.down, position);
+                        Puzzle3.moveTiles(context, Puzzle3.down, position);
                     }
                 } else {
                     if (Math.abs(velocityX) < SWIPE_THRESHOLD_VELOCITY) {
                         return false;
                     }
                     if (e1.getX() - e2.getX() > SWIPE_MIN_DISTANCE) {
-                        Puzzle.moveTiles(context, Puzzle.left, position);
+                        Puzzle3.moveTiles(context, Puzzle3.left, position);
                     } else if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE) {
-                        Puzzle.moveTiles(context, Puzzle.right, position);
+                        Puzzle3.moveTiles(context, Puzzle3.right, position);
                     }
                 }
 
