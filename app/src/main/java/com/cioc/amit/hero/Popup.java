@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import java.util.jar.Attributes;
@@ -19,7 +20,7 @@ import java.util.jar.Attributes;
 
 public class Popup extends Activity {
 EditText e1,e2,e3;
-RadioButton r1,r2,r3;
+    RadioGroup rg;String value;
 ImageButton imageButton1;
 SharedPreferences preferences;
 SharedPreferences.Editor editor;
@@ -28,46 +29,68 @@ public String Name,Phone,Address;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popup);
+         e1= (EditText) findViewById(R.id.user_name);
+        e2= (EditText) findViewById(R.id.user_phone);
+        e3= (EditText) findViewById(R.id.user_address);
+     preferences = getSharedPreferences("MyPrefs",MODE_PRIVATE);
+     DisplayMetrics dm = new DisplayMetrics();
+       getWindowManager().getDefaultDisplay().getMetrics(dm);
 
-      preferences = getSharedPreferences("MyPrefs",MODE_PRIVATE);
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-
-        int width = dm.widthPixels;
+       int width = dm.widthPixels;
         int height = dm.heightPixels;
+
+        rg = (RadioGroup) findViewById(R.id.radioGroup);
+        value =
+                ((RadioButton)findViewById(rg.getCheckedRadioButtonId()))
+                        .getText().toString();
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                value =
+                        ((RadioButton)findViewById(rg.getCheckedRadioButtonId()))
+                                .getText().toString();
+
+            }
+        });
 
         imageButton1 = (ImageButton) findViewById(R.id.Next);
         imageButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String name = e1.getText().toString();
+               String phone = e2.getText().toString();
+               String address = e3.getText().toString();
+                if(name.equals(""))
+                {
+                    Toast.makeText(getApplicationContext(),"Name can't be Empty",Toast.LENGTH_SHORT).show();
+                }
+                else if(phone.equals("")||phone.length()!=10)
+                {
+                    Toast.makeText(getApplicationContext(),"Phone No not Valid",Toast.LENGTH_SHORT).show();
+                }
+                else if(address.equals(""))
+                {
+                    Toast.makeText(getApplicationContext(),"Address can't be Empty",Toast.LENGTH_SHORT).show();
+                }
+                else {
 
-                Intent intent = new Intent(Popup.this, Question4.class);
-                startActivity(intent);
-            }
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("Name", name);
+                    editor.putString("Phone", phone);
+                    editor.putString("Address", address);
+                    editor.putString("Day",value);
+                    editor.commit();
+                     Intent intent = new Intent(Popup.this, Question4.class);
+                    startActivity(intent);
+                    finish();
+                }
+
+                           }
         });
 
 
-//        imageButton2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String personName = preferences.getString("Name",null);
-//                String personePhone = preferences.getString("Phone",null);
-//                String personeAddress = preferences.getString("Address",null);
-//                String s = "Name -"+personName+"\n"+"Phone - "+personePhone+"\n"+"Address -"+personeAddress;
-//                tv
-//
-//            }
-//        });
-    }
-    public void btClick(View view){
-        String name = e1.getText().toString();
-        String phone = e2.getText().toString();
-        String address = e3.getText().toString();
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString(Name,name);
-        editor.putString(Phone,phone);
-        editor.putString(Address,address);
-        editor.commit();
-        Toast.makeText(getApplicationContext(),"Saved",Toast.LENGTH_SHORT).show();
+}
+    public void onBackPressed() {
+        // super.onBackPressed(); commented this line in order to disable back press
+        Toast.makeText(getApplicationContext(), "Back press disabled!", Toast.LENGTH_SHORT).show();
     }
 }

@@ -26,15 +26,15 @@ public class splash extends Activity{
         new Handler().postDelayed(new Runnable() {
 
 
-    public void run() {
-        Intent i = new Intent(splash.this, MainActivity.class);
-        startActivity(i);
+                                      public void run() {
+                                          Intent i = new Intent(splash.this, MainActivity.class);
+                                          startActivity(i);
 
-        // close this activity
-        finish();
+                                          // close this activity
+                                          finish();
+                                      }
+                                  },
+                SPLASH_TIME_OUT);
     }
-},
-        SPLASH_TIME_OUT);
-        }
 
-        }
+}

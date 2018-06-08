@@ -14,7 +14,7 @@
         android:layout_height="120dp"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/puzzle"
-        android:layout_marginTop="86dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/quiz"
         app:cb_color="@color/colorPrimary"
         app:cb_pressedRingWidth="8dp" />
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/quiz"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="5dp"
         android:text="Quiz"
         android:textColor="#d62a2a"
         android:textSize="20dp"
@@ -37,7 +37,7 @@
         android:layout_height="120dp"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="18dp"
         android:src="@drawable/puzzle"
         app:cb_color="@color/colorPrimary"
         app:cb_pressedRingWidth="8dp" />
@@ -48,8 +48,32 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/puzzle"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="5dp"
         android:text="puzzle"
+        android:textColor="#d62a2a"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+    <at.markushi.ui.CircleButton
+        android:id="@+id/record"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:src="@drawable/ic_save_black_24dp"
+        app:cb_color="#d62a2a"
+        app:cb_pressedRingWidth="8dp" />
+
+    <TextView
+        android:id="@+id/rec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/puzzle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="172dp"
+        android:text="record"
         android:textColor="#d62a2a"
         android:textSize="20dp"
         android:textStyle="bold" />
